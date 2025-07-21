@@ -3,6 +3,8 @@
 
 #include <stdarg.h>
 
+int _putchar(char c);
+
 /**
  * types - Create a strcuture for the types that we want to print
  * @mod: The future modulo for the argument of printf function
@@ -18,7 +20,6 @@ int _printf(const char *format, ...);
 int print_char(va_list *argument_list);
 int print_string(va_list *argument_list);
 int print_modulo(va_list *argument_list);
-int _putchar(char c);
 int _strlen(char *s);
 
 #endif
