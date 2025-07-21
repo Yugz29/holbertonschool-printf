@@ -5,15 +5,14 @@
 int _printf(const char *format, ...)
 {
 	types_t check_modulo = {
-		{"%s", print_strings};
-		{"%c", print_char};
-		{NULL, NULL};
+		{"%c", print_char},
+		{"%s", print_strings},
+		{NULL, NULL},
 	};
 
-	//va_list argument_list; (pas sur qu'il soit autorise)
+	va_list argument_list;
 
-	unsigned int format_i, types_i;
-	int len;
+	int format_i, types_i, len;
 
 	format_i = 0;
 
@@ -23,8 +22,8 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(argument_list, format);
-	len = _strlen(format);
 
+	len = _strlen(format);
 
 	while (format_i < len)
 	{
@@ -32,11 +31,11 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[format_i]);
 		}
-		format_i++;
 
 		else
 		{
-			Pass;
+			;
 		}
+		format_i++;
 	}
 }
