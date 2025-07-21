@@ -1,1 +1,1 @@
-Project Printf - Arsione & Yann - Holberton School
+Project Printf - Arsinoe & Yann - Holberton School
