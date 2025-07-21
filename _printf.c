@@ -44,8 +44,11 @@ int _printf(const char *format, ...)
 			}
 			for (types_i = 0; check_modulo[types_i].mod != NULL; types_i++)
 			{
-				if (check_modulo[types_i].f(argument_list))
+				if (format[format_i] == check_modulo[types_i].mod[1])
+				{
+					check_modulo[types_i].f(argument_list);
 					break;
+				}
 			}
 			format_i++;
 
