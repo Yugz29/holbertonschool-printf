@@ -15,7 +15,6 @@ typedef struct types {
 	int (*f)(va_list *argument_list);
 } types_t;
 
-int _strlen(char *s);
 int _printf(const char *format, ...);
 int print_char(va_list *argument_list);
 int print_string(va_list *argument_list);

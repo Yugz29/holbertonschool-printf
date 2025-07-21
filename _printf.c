@@ -2,6 +2,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * _printf - Print a string or a charactere
+ * @format: the argument to print
+ * Return: the number of charactere printed.
+**/
 int _printf(const char *format, ...)
 {
 	types_t check_modulo[] = {
