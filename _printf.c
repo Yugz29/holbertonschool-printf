@@ -19,14 +19,14 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (-1);
+		return (-1); //pourquoi -1
 	}
 
 	va_start(argument_list, format);
 
 	len = _strlen(format);
 
-	while (format_i < len)
+	while (format_i < len) // faire une 2e boucle utile ?
 	{
 		if (format[format_i] != '%')
 		{
@@ -50,4 +50,6 @@ int _printf(const char *format, ...)
 
 		}
 	}
+	va_end(argument_list, format); // oblige d'avoir argument_list
+	return (len);
 }
