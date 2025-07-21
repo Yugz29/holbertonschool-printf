@@ -4,14 +4,25 @@
 
 int _printf(const char *format, ...)
 {
-	int format_i = 0;
-	int type_i, len;
+	types_t check_modulo = {
+		{"%s", print_strings};
+		{"%c", print_char};
+		{NULL, NULL};
+	};
+
+	//va_list argument_list; (pas sur qu'il soit autorise)
+
+	unsigned int format_i, types_i;
+	int len;
+
+	format_i = 0;
 
 	if (format == NULL)
 	{
 		return (-1);
 	}
 
+	va_start(argument_list, format);
 	len = _strlen(format);
 
 
@@ -22,5 +33,10 @@ int _printf(const char *format, ...)
 			_putchar(format[format_i]);
 		}
 		format_i++;
+
+		else
+		{
+			Pass;
+		}
 	}
 }
