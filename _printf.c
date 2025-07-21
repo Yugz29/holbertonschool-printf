@@ -31,6 +31,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[format_i]);
 			format_i++;
+			count++;
 		}
 		else
 		{
@@ -45,12 +46,12 @@ int _printf(const char *format, ...)
 				if (format[format_i] == check_modulo[types_i].mod[1])
 				{
 					check_modulo[types_i].f(&argument_list);
+					count++;
 					break;
 				}
 			}
 			format_i++;
 		}
-		count++;
 	}
 	va_end(argument_list);
 	return (count);
