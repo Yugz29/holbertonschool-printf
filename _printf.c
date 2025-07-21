@@ -1,17 +1,13 @@
 #include "main.h"
 
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (s[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
-}
-
 int _printf(const char *format, ...)
 {
+	int format_i = 0;
+	int type_i;
+	int len = _strlen(format);
 
+	while (format[format_i] < len)
+	{
+		if (format[format_i])
+	}
 }
