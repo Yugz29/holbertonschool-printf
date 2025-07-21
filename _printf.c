@@ -13,9 +13,10 @@ int _printf(const char *format, ...)
 
 	va_list argument_list;
 
-	int format_i, types_i, len;
+	int format_i, types_i, count;
 
 	format_i = 0;
+	count = 0;
 
 	if (format == NULL)
 	{
@@ -24,9 +25,7 @@ int _printf(const char *format, ...)
 
 	va_start(argument_list, format);
 
-	len = _strlen(format);
-
-	while (format_i < len)
+	while (format[format_i] != '\0')
 	{
 		if (format[format_i] != '%')
 		{
@@ -46,14 +45,15 @@ int _printf(const char *format, ...)
 			{
 				if (format[format_i] == check_modulo[types_i].mod[1])
 				{
-					check_modulo[types_i].f(argument_list);
+					check_modulo[types_i].f(&argument_list);
 					break;
 				}
 			}
 			format_i++;
 
 		}
+		count++;
 	}
 	va_end(argument_list);
-	return (len);
+	return (count);
 }

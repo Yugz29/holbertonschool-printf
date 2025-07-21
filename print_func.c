@@ -7,13 +7,14 @@
  * @argument_list: liste d'argument
  * Return: void
 **/
-void print_char(va_list *argument_list)
+int print_char(va_list *argument_list)
 {
 	char c;
 
-	c = va_arg(*argument_list, char);
+	c = va_arg(*argument_list, int);
 
 	_putchar(c);
+	return (1);
 }
 
 /**
@@ -21,9 +22,9 @@ void print_char(va_list *argument_list)
  * @argument_list: liste d'argument
  * Return: void
 **/
-void print_string(va_list *argument_list)
+int print_string(va_list *argument_list)
 {
-	char i;
+	int i;
 	char *s;
 
 	s = va_arg(*argument_list, char *);
@@ -35,24 +36,14 @@ void print_string(va_list *argument_list)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		_putchar(s);
+		_putchar(s[i]);
 	}
+	return (i);
 }
 
-void print_modulo(va_list *argument_list)
+int print_modulo(va_list *argument_list)
 {
-	char i;
-	char *s;
-
-	s = va_arg(*argument_list, char *);
-
-	if (s == NULL)
-	{
-		return (-1);
-	}
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		_putchar(s);
-	}
+	(void)argument_list;
+	_putchar('%');
+	return (1);
 }
