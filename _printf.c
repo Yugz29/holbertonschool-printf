@@ -6,7 +6,7 @@ int _printf(const char *format, ...)
 {
 	types_t check_modulo[] = {
 		{"%c", print_char},
-		{"%s", print_strings},
+		{"%s", print_string},
 		{"%%", print_modulo},
 		{NULL, NULL},
 	};

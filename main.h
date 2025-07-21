@@ -15,5 +15,9 @@ typedef struct types {
 
 int _strlen(char *s);
 int _printf(const char *format, ...);
+void print_char(va_list *argument_list);
+void print_string(va_list *argument_list);
+void print_modulo(va_list *argument_list);
+
 
 #endif
