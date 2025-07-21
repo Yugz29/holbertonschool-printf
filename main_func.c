@@ -4,7 +4,7 @@
 /**
  * _strlen - Get the length of a string
  * @s: the string
- * Retrun: the length of the string 's'
+ * Return: the length of the string 's'
 **/
 int _strlen(char *s)
 {
@@ -25,7 +25,6 @@ int _strlen(char *s)
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
