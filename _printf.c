@@ -4,9 +4,10 @@
 
 int _printf(const char *format, ...)
 {
-	types_t check_modulo = {
+	types_t check_modulo[] = {
 		{"%c", print_char},
 		{"%s", print_strings},
+		{"%%", print_modulo},
 		{NULL, NULL},
 	};
 
@@ -30,12 +31,23 @@ int _printf(const char *format, ...)
 		if (format[format_i] != '%')
 		{
 			_putchar(format[format_i]);
+			format_i++;
 		}
 
 		else
 		{
-			;
+			format_i++;
+
+			if (format[format_i] == '\0')
+					return (-1);
+
+			for (types_i = 0; check_modulo[types_i].mod != NULL; types_i++)
+			{
+				if (check_modulo[types_i].f(argument_list))
+					break;
+			}
+			format_i++;
+
 		}
-		format_i++;
 	}
 }

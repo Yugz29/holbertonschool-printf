@@ -5,6 +5,7 @@
 
 typedef struct types {
 	char *mod;
+	void (*f)(va_list);
 } types_t;
 
 int _strlen(char *s);
