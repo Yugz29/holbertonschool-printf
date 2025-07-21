@@ -19,14 +19,14 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (-1); //pourquoi -1
+		return (-1);
 	}
 
 	va_start(argument_list, format);
 
 	len = _strlen(format);
 
-	while (format_i < len) // faire une 2e boucle utile ?
+	while (format_i < len)
 	{
 		if (format[format_i] != '%')
 		{
@@ -39,8 +39,9 @@ int _printf(const char *format, ...)
 			format_i++;
 
 			if (format[format_i] == '\0')
+			{
 					return (-1);
-
+			}
 			for (types_i = 0; check_modulo[types_i].mod != NULL; types_i++)
 			{
 				if (check_modulo[types_i].f(argument_list))
@@ -50,6 +51,6 @@ int _printf(const char *format, ...)
 
 		}
 	}
-	va_end(argument_list, format); // oblige d'avoir argument_list
+	va_end(argument_list);
 	return (len);
 }
