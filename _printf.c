@@ -32,7 +32,6 @@ int _printf(const char *format, ...)
 			_putchar(format[format_i]);
 			format_i++;
 		}
-
 		else
 		{
 			format_i++;
@@ -50,7 +49,6 @@ int _printf(const char *format, ...)
 				}
 			}
 			format_i++;
-
 		}
 		count++;
 	}
