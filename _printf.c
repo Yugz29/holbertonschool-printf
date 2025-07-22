@@ -9,24 +9,15 @@
 **/
 int _printf(const char *format, ...)
 {
-	types_t check_modulo[] = {
-		{"%c", print_char},
-		{"%s", print_string},
-		{"%%", print_modulo},
-		{NULL, NULL},
-	};
-
 	va_list argument_list;
 
-	int format_i, types_i, count;
+	int format_i, count;
 
 	format_i = 0;
 	count = 0;
 
 	if (format == NULL)
-	{
 		return (-1);
-	}
 
 	va_start(argument_list, format);
 
@@ -46,15 +37,7 @@ int _printf(const char *format, ...)
 			{
 					return (-1);
 			}
-			for (types_i = 0; check_modulo[types_i].mod != NULL; types_i++)
-			{
-				if (format[format_i] == check_modulo[types_i].mod[1])
-				{
-					check_modulo[types_i].f(&argument_list);
-					count++;
-					break;
-				}
-			}
+			count += find_types(format[format_i], &argument_list);
 			format_i++;
 		}
 	}

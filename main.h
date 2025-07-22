@@ -16,9 +16,10 @@ typedef struct types {
 } types_t;
 
 int _printf(const char *format, ...);
+
 int print_char(va_list *argument_list);
 int print_string(va_list *argument_list);
 int print_modulo(va_list *argument_list);
-int _strlen(char *s);
+int find_types(char charactere, va_list *argument_list);
 
 #endif
