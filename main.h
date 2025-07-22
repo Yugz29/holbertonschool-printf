@@ -9,8 +9,9 @@ int _putchar(char c);
  * types - Create a strcuture for the types that we want to print
  * @mod: The future modulo for the argument of printf function
  * @print_func: Pointer function wich prints according to the type.
-**/
-typedef struct types {
+ **/
+typedef struct types
+{
 	char *mod;
 	int (*f)(va_list *argument_list);
 } types_t;
