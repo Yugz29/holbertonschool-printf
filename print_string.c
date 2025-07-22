@@ -8,19 +8,20 @@
 **/
 int print_string(va_list *argument_list)
 {
-	int i;
+	int i = 0;
 	char *s;
 
 	s = va_arg(*argument_list, char *);
 
 	if (s == NULL)
 	{
-		return (-1);
+		s = "(null)";
 	}
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i])
 	{
 		_putchar(s[i]);
+		i++;
 	}
 	return (i);
 }
