@@ -23,7 +23,7 @@ int find_types(char charactere, va_list *argument_list)
 		if (charactere == check_modulo[type_i].mod[1])
 		{
 			check_modulo[type_i].f(argument_list);
-			break;
+			return (check_modulo[type_i].f(argument_list));
 		}
 	}
 	return (0);
