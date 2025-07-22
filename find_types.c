@@ -2,10 +2,10 @@
 #include <unistd.h>
 
 /**
- * find_types - Find the type of format, checking at the
-		charactere behind modulo
+ * find_types - Find the type of format, checking the charactere behind modulo
  * @argument_list: argument liste, on the variadic function
- * Return: always 0.
+ * @charactere: the charactere after the %
+ * Return: 2 for % and the next charactere
  **/
 
 int find_types(char charactere, va_list *argument_list)
