@@ -6,7 +6,8 @@
 		charactere behind modulo
  * @argument_list: argument liste, on the variadic function
  * Return: always 0.
-**/
+ **/
+
 int find_types(char charactere, va_list *argument_list)
 {
 	types_t check_modulo[] = {

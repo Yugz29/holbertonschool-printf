@@ -6,7 +6,8 @@
  * _printf - Print a string or a charactere
  * @format: the argument to print
  * Return: the number of charactere printed.
-**/
+ **/
+
 int _printf(const char *format, ...)
 {
 	va_list argument_list;
