@@ -43,6 +43,5 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(argument_list);
-	printf("%d\n", count);
 	return (count);
 }
