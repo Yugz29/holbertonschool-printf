@@ -26,5 +26,7 @@ int find_types(char charactere, va_list *argument_list)
 			return (check_modulo[type_i].f(argument_list));
 		}
 	}
-	return (0);
+	_putchar('%');
+	_putchar(charactere);
+	return (2);
 }
