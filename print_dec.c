@@ -17,8 +17,15 @@ int print_rec(int x)
 
 int print_dec(va_list * argument_list)
 {
-	unsigned int d;
+	int d;
 
         d = va_arg(*argument_list, int);
+
+	if (d < 0)
+	{
+		d = -d;
+		_putchar('-');
+	}
+
 	return (print_rec(d));
 }
