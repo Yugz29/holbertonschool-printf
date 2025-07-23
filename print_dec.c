@@ -5,14 +5,20 @@
  * @argument_list: liste of argument of the variadic fonction
  * Return: 1 value
 **/
-int print_dec(va_list *argument_list)
+int print_rec(int x)
+{
+	if (x >= 10)
+	{
+		print_rec(x / 10);
+	}
+
+	return _putchar((x % 10) + '0');
+}
+
+int print_dec(va_list * argument_list)
 {
 	unsigned int d;
 
-	d = va_arg(*argument_list, int);
-
-	d /= 10;
-	_putchar((d % 10) + '0');
-
-	return (1);
+        d = va_arg(*argument_list, int);
+	return (print_rec(d));
 }
