@@ -14,6 +14,8 @@ int find_types(char charactere, va_list *argument_list)
 		{"%c", print_char},
 		{"%s", print_string},
 		{"%%", print_modulo},
+		{"%i", print_int},
+		{"%d", print_dec},
 		{NULL, NULL},
 	};
 
