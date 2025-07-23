@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_dec - Print a decimal
- * @argument_list: liste of argument of the variadic fonction
- * Return: 1 value
+ * print_rec - Recursively prints an integers number
+ * @x: the number to print
+ * Return: number of charactere printed
 **/
 int print_rec(int x)
 {
@@ -12,14 +12,19 @@ int print_rec(int x)
 		print_rec(x / 10);
 	}
 
-	return _putchar((x % 10) + '0');
+	return (_putchar((x % 10) + '0'));
 }
 
-int print_dec(va_list * argument_list)
+/**
+ * print_dec - Print a signed decimal integer
+ * @argument_list: pointer to the list of argument
+ * Return: number of charactere printed.
+**/
+int print_dec(va_list *argument_list)
 {
 	int d;
 
-        d = va_arg(*argument_list, int);
+	d = va_arg(*argument_list, int);
 
 	if (d < 0)
 	{
