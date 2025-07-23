@@ -24,5 +24,7 @@ int print_modulo(va_list *argument_list);
 int print_int(va_list *argument_list);
 int print_dec(va_list *argument_list);
 int find_types(char charactere, va_list *argument_list);
+int print_number_recursive(unsigned int n);
+int get_integer(va_list *argument_list);
 
 #endif
