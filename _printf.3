@@ -6,12 +6,13 @@ _printf \- Produces output according to a format.
 .SH SYNOPSIS
 .B #include "main.h"
 .br
-.B int _printf(const char *format, ..;);
+.B int _printf(const char *format, ...);
 
 .SH DESCRIPTION
 The
 .B _printf
 function produces output according to a format that specifies with a %, and arguments are converted for output.
+.br
 Supported format specifiers:
 .TP
 .B %c - Print a single character.
@@ -27,16 +28,21 @@ Supported format specifiers:
 .SH RETURN VALUE
 
 Return the number of charactere printed (but not the null byte).
+.br
 Return (-1) if an error occurs.
 
 .SH EXAMPLES
-.B _printf("%s\n", Hello wordl !");
+.B _printf("%s\\n", Hello wordl !");
 .br
 Output: Hello wordl !
-.B _printf("Number: %i\n", 12);
+.br
+.B _printf("Number: %i\\n", 12);
 .br
 Output: Number: 12
 
 .SH AUTHORS
 Written and produces by Yann D and Arsinoe C, for the '_printf' project by Holberton School's.
 
+.SH SEE ALSO
+.BR printf (3),
+.BR putchar (3)
