@@ -1,7 +1,7 @@
-.TH  _PRINTF
+.TH _PRINTF 3 "July 2025" "Holberton School" "User Commands"
 
-.SH  NAME
-_printf \- Produces output according to a format.
+.SH NAME
+_printf \- produces output according to a format
 
 .SH SYNOPSIS
 .B #include "main.h"
@@ -11,37 +11,50 @@ _printf \- Produces output according to a format.
 .SH DESCRIPTION
 The
 .B _printf
-function produces output according to a format that specifies with a %, and arguments are converted for output.
+function produces output according to a format string that specifies, using the
+.B %
+character, how subsequent arguments are converted for output.
+
 .br
 Supported format specifiers:
 .TP
-.B %c - Print a single character.
+.B %c
+Print a single character.
 .TP
-.B %s - Print a string.
+.B %s
+Print a string.
 .TP
-.B %% - Print a percent sign.
+.B %%
+Print a percent sign.
 .TP
-.B %d - Print a signed decimal integer.
+.B %d
+Print a signed decimal integer.
 .TP
-.B %i - Print a singed decimal integer (same as %d).
+.B %i
+Print a signed decimal integer (same as %d).
 
 .SH RETURN VALUE
-
-Return the number of charactere printed (but not the null byte).
+Returns the number of characters printed (excluding the null byte).
 .br
-Return (-1) if an error occurs.
+Returns
+.B -1
+if an error occurs.
 
 .SH EXAMPLES
-.B _printf("%s\\n", Hello wordl !");
+.B _printf("%s\\n", "Hello world!");
 .br
-Output: Hello wordl !
+Output:
+.I Hello world!
 .br
 .B _printf("Number: %i\\n", 12);
 .br
-Output: Number: 12
+Output:
+.I Number: 12
 
 .SH AUTHORS
-Written and produces by Yann D and Arsinoe C, for the '_printf' project by Holberton School's.
+Written and produced by Yann D. and Arsinoé C. for the
+.B _printf
+project at Holberton School.
 
 .SH SEE ALSO
 .BR printf (3),
