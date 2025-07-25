@@ -89,6 +89,28 @@ len2 = printf("Percent:[%%]\n");
 _printf("Len:[%d]\n", len);
 printf("Len:[%d]\n", len2);
 ```
+## Flowchart
+```
+flowchart TD
+    A[Start] --> B[_printf appelé avec format et args]
+    B --> C{format est NULL ?}
+    C -- Oui --> Z[Retourne -1]
+    C -- Non --> D[Initialise i = 0, count = 0]
+    D --> E{Fin de chaîne ?}
+    E -- Oui --> M[va_end sur arg_list]
+    M --> N[Retourne count]
+    E -- Non --> F{Caractère % ?}
+    F -- Non --> G[Écrit le caractère avec _putchar]
+    G --> H[Incrémente count]
+    H --> I[Incrémente i]
+    I --> E
+    F -- Oui --> J{Caractère suivant nul ?}
+    J -- Oui --> Z2[Retourne -1]
+    J -- Non --> K[Appelle find_types avec format et va_list]
+    K --> L[Ajoute le résultat à count]
+    L --> O[Incrémente i de 2]
+    O --> E
+```
 
 ## 🧑🏼‍💻 Authors
 
