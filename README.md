@@ -69,6 +69,32 @@ _printf("Display percent: %%\n");
 > Display percent: %
 ```
 
+## How does that works ?
+
+```
+Chaîne format :  A   % c   B   % d
+
+Boucle principale (_printf) : lecture lettre par lettre
+-------------------------------------------------------
+i=0 -> 'A'  -> _putchar('A')
+i=1 -> ' '  -> _putchar(' ')
+i=2 -> '%'  -> appel find_types avec charactere='c'
+    Boucle find_types (vérifie types connus) :
+        type 0 -> '%c' -> correspond ! -> appel print_char()
+i=3 -> ' '  -> _putchar(' ')
+i=4 -> 'B'  -> _putchar('B')
+i=5 -> ' '  -> _putchar(' ')
+i=6 -> '%'  -> appel find_types avec charactere='d'
+    Boucle find_types (vérifie types connus) :
+        type 0 -> '%c' -> non
+        type 1 -> '%s' -> non
+        type 2 -> '%%' -> non
+        type 3 -> '%i' -> non
+        type 4 -> '%d' -> correspond ! -> appel print_int()
+i=7 -> fin de la chaîne
+
+```
+
 ## ✅ Tests performed
 
 The following test cases were manually verified to compare the behavior of `_printf` with the standard `printf`:
