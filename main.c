@@ -40,11 +40,9 @@ len = _printf("Percent:[%%]\n");
 len2 = printf("Percent:[%%]\n");
 _printf("Len:[%d]\n", len);
 printf("Len:[%d]\n", len2);
-/**_printf("Unknown:[%r]\n");
-printf("Unknown:[%r]\n");**/
+_printf("Unknown:[%r]\n");
+printf("Unknown:[%r]\n");
 _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
-_printf("%!\n");
-printf("%!\n");
 return (0);
 }

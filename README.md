@@ -18,6 +18,12 @@ The project is compiled with this command:
 
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+
+ou éxecuter un mode explicatif :
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.c _printf.c find_types.c print_char.c get_integer.c print_string.c print_modulo.c _putchar.c -o my_printf
+
+./my_printf
 ```
 
 **All `.c` files must be in the same folder as `main.h.`**
