@@ -19,10 +19,9 @@ The project is compiled with this command:
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
-ou éxecuter un mode explicatif :
+or use 👇🏼 to have explanations :
 
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.c _printf.c find_types.c print_char.c get_integer.c print_string.c print_modulo.c _putchar.c -o my_printf
-
 ./my_printf
 ```
 
@@ -69,7 +68,7 @@ _printf("Display percent: %%\n");
 > Display percent: %
 ```
 
-## How does that works ?
+## 🤔 How does that works ?
 
 ```
 Chaîne format :  A   % c   B   % d
@@ -92,7 +91,6 @@ i=6 -> '%'  -> appel find_types avec charactere='d'
         type 3 -> '%i' -> non
         type 4 -> '%d' -> correspond ! -> appel print_int()
 i=7 -> fin de la chaîne
-
 ```
 
 ## ✅ Tests performed
